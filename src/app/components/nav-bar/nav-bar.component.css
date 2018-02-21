@@ -1,0 +1,58 @@
+.navtop
+{
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    height: 56px;
+    background-color:#3b50c7;
+    margin: 0px 0px!important;
+}
+
+.navheader{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+
+.navheader a span{
+    color: #22cdf3;
+    transform: rotate(24deg);
+    display: inline-block;
+    font-size: 1.1em;
+}
+
+.appbtn{
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 88px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+span{
+    font-size: 18px;
+}
+
+a{
+    color: #fff;
+}

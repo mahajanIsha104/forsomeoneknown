@@ -1,0 +1,27 @@
+.homecontent{
+    background:url(/assets/1.jpg) no-repeat 0px 0px;
+    min-height: 800px;
+    -webkit-background-size: cover;
+    text-align: center;
+}
+
+.w3_banner_info {
+    /* margin: 10em auto 0; */
+    padding: 90px 60px;
+    /* width: 80%; */
+    text-align: center;
+    color: #fff !important;
+}
+
+.w3_banner_info_grid h3 {
+    font-size: 3.5em;
+    font-family: "Exo 2", sans-serif;
+}
+
+.w3_banner_info_grid h3 {
+    font-size: 3.8em;
+    letter-spacing: 3px;
+    color: #fff;
+    line-height: 1.3em;
+    text-transform: uppercase;
+}
