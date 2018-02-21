@@ -39,5 +39,5 @@ const appRoutes:Routes=[
 export class ApproutesModule { }
 
 ## Route Load Via
-<app-nav-bar></app-nav-bar>
-<router-outlet></router-outlet>  // This line loads the routes
+<!-- <app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet> -->  // This line loads the routes
