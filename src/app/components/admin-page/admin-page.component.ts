@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { DBOperation } from '../shared/data-grid/dboperations';
 import { IUser } from './users.model';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-admin-page',
@@ -13,12 +14,14 @@ export class AdminPageComponent implements OnInit {
   isREADONLY: boolean = false;
   exportFileName: string = "Users_";
 
+  @ViewChild("template") template:TemplateRef<any>;
   users: IUser[];
-  user: any;
+  user: IUser;
   msg: string;
   dbops: DBOperation;
   modalTitle: string;
   modalBtnTitle: string;
+  modalRef: BsModalRef;
 
   //Grid Vars start
   columns: any[] = [
@@ -49,6 +52,7 @@ export class AdminPageComponent implements OnInit {
   };
   hdrbtns: any[] = [];
   gridbtns: any[] = [];
+  
   initGridButton() {
 
     this.hdrbtns = [
@@ -61,30 +65,24 @@ export class AdminPageComponent implements OnInit {
       }];
     this.gridbtns = [
       {
-        title: 'Edit',
+        title: 'Click To Open',
         keys: ['Id'],
-        action: DBOperation.update,
-        ishide: this.isREADONLY
-      },
-      {
-        title: 'X',
-        keys: ["Id"],
-        action: DBOperation.delete,
+        action: DBOperation.popup,
         ishide: this.isREADONLY
       }
-
     ];
 
   }
   //Grid Vars end
 
-  constructor() { }
+  constructor(private modalService: BsModalService) { }
 
   openDialog() {
   }
 
   ngOnInit(): void {
     this.LoadUsers();
+    this.initGridButton();
   }
 
   LoadUsers(): void {
@@ -125,8 +123,9 @@ export class AdminPageComponent implements OnInit {
     this.openDialog();
   }
 
+  modalData:any;
+  
   gridaction(gridaction: any): void {
-
     switch (gridaction.action) {
       case DBOperation.create:
         this.addUser();
@@ -136,6 +135,11 @@ export class AdminPageComponent implements OnInit {
         break;
       case DBOperation.delete:
         this.deleteUser(gridaction.values[0].value);
+        break;
+      case DBOperation.popup:
+        this.user = this.users[gridaction.values[0].value];
+        console.log(JSON.stringify(gridaction));
+        this.modalRef = this.modalService.show(this.template);
         break;
     }
   }

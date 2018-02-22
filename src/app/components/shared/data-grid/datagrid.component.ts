@@ -67,9 +67,9 @@ export class DataGrid {
 
         if (row != null) {
             keyds.values = [];
-            // btn.keys.forEach((key: any) => {
-            //     keyds.values.push({ key: key, value: row[key] });
-            // });
+            btn.keys.forEach((key: any) => {
+                 keyds.values.push({ key: key, value: row[key] });
+            });
         }
         this.btnclick.emit(keyds);
     }

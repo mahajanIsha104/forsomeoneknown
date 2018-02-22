@@ -12,6 +12,7 @@ import {SliderModule} from 'primeng/slider';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {DropdownModule} from 'primeng/dropdown';
 import { SharedModule } from './components/shared/shared-module';
+import { ModalModule, BsModalService } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,9 +31,10 @@ import { SharedModule } from './components/shared/shared-module';
     DropdownModule,
     FormsModule,
     NoopAnimationsModule,
-    SharedModule
+    SharedModule,
+    ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
