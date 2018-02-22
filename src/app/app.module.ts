@@ -15,6 +15,7 @@ import { SharedModule } from './components/shared/shared-module';
 import { ModalModule, BsModalService } from 'ngx-bootstrap';
 import { UserFilterPipe } from './components/shared/data-grid/grid-filterpipe';
 import { HttpModule } from '@angular/http';
+import { CarouselModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpModule } from '@angular/http';
     NoopAnimationsModule,
     SharedModule,
     ModalModule.forRoot(),
-    HttpModule
+    HttpModule,
+    CarouselModule
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]

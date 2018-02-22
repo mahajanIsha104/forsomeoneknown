@@ -6,16 +6,28 @@
 }
 
 .w3_banner_info {
-    /* margin: 10em auto 0; */
+    margin: 0px !important;
     padding: 90px 60px;
     /* width: 80%; */
     text-align: center;
     color: #fff !important;
 }
+.w3_banner_info_grid{
+    margin: 0px !important;
+    padding: 0px 80px !important; 
+}
+
+.reset-margins{
+    margin:0px !important;
+}
 
 .w3_banner_info_grid h3 {
     font-size: 3.5em;
     font-family: "Exo 2", sans-serif;
+}
+
+.wthree_banner_grids{
+    margin: 0px !important;
 }
 
 .w3_banner_info_grid h3 {
@@ -24,4 +36,9 @@
     color: #fff;
     line-height: 1.3em;
     text-transform: uppercase;
+}
+
+.fixedHeight{
+    width: 644.500px !important;
+    height:300px !important; 
 }
