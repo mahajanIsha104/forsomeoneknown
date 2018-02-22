@@ -4,7 +4,8 @@ import { DBOperation } from '../shared/data-grid/dboperations';
 import { IUser } from './users.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 import { UserFilterPipe } from '../shared/data-grid/grid-filterpipe';
-
+import { Http} from '@angular/http';
+import {map} from 'rxjs/operators/map';
 @Component({
   selector: 'app-admin-page',
   templateUrl: './admin-page.component.html',
@@ -54,7 +55,7 @@ export class AdminPageComponent implements OnInit {
   gridbtns: any[] = [];
   usrFilterPipe:UserFilterPipe;
   
-  constructor(private modalService: BsModalService,private userFilter:UserFilterPipe) { 
+  constructor(private modalService: BsModalService,private userFilter:UserFilterPipe,private http:Http) { 
     this.usrFilterPipe=userFilter;
   }
 
@@ -79,8 +80,6 @@ export class AdminPageComponent implements OnInit {
   }
   //Grid Vars end
 
-  
-
   openDialog() {
   }
 
@@ -91,17 +90,23 @@ export class AdminPageComponent implements OnInit {
 
   LoadUsers(): void {
     this.users= new Array<IUser>();
-    for(let i=0;i<50;i++){
-      let params = {
-        "Id":i,
-        "name":`A `+i,
-        "email":`B `+i,
-        "mobile": `C `+i,
-        "comments":`Long long `+i
-      };
-      let usr = new IUser(params);
-      this.users.push(usr);
-    }
+    
+    this.http.get('/assets/userdata.json').map((resp)=> resp.json().data as IUser[]).subscribe(
+      e=>{
+        this.users=e;
+      }
+    );
+    // for(let i=0;i<50;i++){
+    //   let params = {
+    //     "Id":i,
+    //     "name":`A `+i,
+    //     "email":`B `+i,
+    //     "mobile": `C `+i,
+    //     "comments":`Long long `+i
+    //   };
+    //   let usr = new IUser(params);
+    //   this.users.push(usr);
+    // }
   }
 
   addUser() {

@@ -14,6 +14,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { SharedModule } from './components/shared/shared-module';
 import { ModalModule, BsModalService } from 'ngx-bootstrap';
 import { UserFilterPipe } from './components/shared/data-grid/grid-filterpipe';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserFilterPipe } from './components/shared/data-grid/grid-filterpipe';
     FormsModule,
     NoopAnimationsModule,
     SharedModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    HttpModule
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]
