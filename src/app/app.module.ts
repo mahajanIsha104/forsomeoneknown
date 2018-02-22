@@ -13,6 +13,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {DropdownModule} from 'primeng/dropdown';
 import { SharedModule } from './components/shared/shared-module';
 import { ModalModule, BsModalService } from 'ngx-bootstrap';
+import { UserFilterPipe } from './components/shared/data-grid/grid-filterpipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap';
     SharedModule,
     ModalModule.forRoot()
   ],
-  providers: [BsModalService],
+  providers: [BsModalService,UserFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

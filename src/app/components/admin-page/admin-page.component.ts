@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { DBOperation } from '../shared/data-grid/dboperations';
 import { IUser } from './users.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { UserFilterPipe } from '../shared/data-grid/grid-filterpipe';
 
 @Component({
   selector: 'app-admin-page',
@@ -75,7 +76,7 @@ export class AdminPageComponent implements OnInit {
   }
   //Grid Vars end
 
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService,private userFilter:UserFilterPipe) { }
 
   openDialog() {
   }
