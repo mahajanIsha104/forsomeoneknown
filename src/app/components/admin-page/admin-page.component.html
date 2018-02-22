@@ -1,0 +1,13 @@
+<div class="container">
+  <data-grid [columns]="columns"
+               [data]="users"
+               [gridbtns]="gridbtns"
+               [hdrbtns]="hdrbtns"
+               [sort]="sorting"
+               [isshowfilter]=true
+               [isExporttoCSV]=true
+               [exportFileName]="exportFileName"
+               [filter] = userfilter
+               (btnclick)="gridaction($event)">
+    </data-grid>
+</div>
