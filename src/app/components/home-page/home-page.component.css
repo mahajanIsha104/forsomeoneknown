@@ -28,9 +28,10 @@
 
 .wthree_banner_grids{
     margin: 0px !important;
+    padding-top: 80px;
 }
 
-.w3_banner_info_grid h3 {
+.center-header{
     font-size: 3.8em;
     letter-spacing: 3px;
     color: #fff;
