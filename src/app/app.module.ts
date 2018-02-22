@@ -35,7 +35,7 @@ import { UserFilterPipe } from './components/shared/data-grid/grid-filterpipe';
     SharedModule,
     ModalModule.forRoot()
   ],
-  providers: [BsModalService,UserFilterPipe],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

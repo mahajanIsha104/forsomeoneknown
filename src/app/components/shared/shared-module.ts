@@ -9,9 +9,10 @@ import { SearchComponent } from "./search.component";
 import { UserFilterPipe } from "./data-grid/grid-filterpipe";
 
 @NgModule({
-    declarations:[DataGrid,Format,OrderBy,SearchComponent],
-    exports:[DataGrid,SearchComponent,UserFilterPipe],
-    imports:[FormsModule,BrowserModule,]
+    declarations:[DataGrid,Format,OrderBy,SearchComponent,UserFilterPipe],
+    exports:[DataGrid,SearchComponent],
+    imports:[FormsModule,BrowserModule,],
+    providers:[UserFilterPipe]
 })
 export class SharedModule{
 

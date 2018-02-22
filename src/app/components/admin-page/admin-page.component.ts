@@ -14,7 +14,6 @@ export class AdminPageComponent implements OnInit {
 
   isREADONLY: boolean = false;
   exportFileName: string = "Users_";
-
   @ViewChild("template") template:TemplateRef<any>;
   users: IUser[];
   user: IUser;
@@ -23,7 +22,7 @@ export class AdminPageComponent implements OnInit {
   modalTitle: string;
   modalBtnTitle: string;
   modalRef: BsModalRef;
-
+  //userfilter:UserFilterPipe;
   //Grid Vars start
   columns: any[] = [
     {
@@ -53,7 +52,12 @@ export class AdminPageComponent implements OnInit {
   };
   hdrbtns: any[] = [];
   gridbtns: any[] = [];
+  usrFilterPipe:UserFilterPipe;
   
+  constructor(private modalService: BsModalService,private userFilter:UserFilterPipe) { 
+    this.usrFilterPipe=userFilter;
+  }
+
   initGridButton() {
 
     this.hdrbtns = [
@@ -72,11 +76,10 @@ export class AdminPageComponent implements OnInit {
         ishide: this.isREADONLY
       }
     ];
-
   }
   //Grid Vars end
 
-  constructor(private modalService: BsModalService,private userFilter:UserFilterPipe) { }
+  
 
   openDialog() {
   }
